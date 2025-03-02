@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="b840ae0c-c5f5-4053-a960-d1a9ca865a09" name="Changes" comment="Zsdfgsdgsdg">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/baza/HelloApplication.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/baza/HelloApplication.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/baza/Student.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/baza/Student.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/example/baza/baza.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/example/baza/baza.java" afterDir="false" />
-    </list>
+    <list default="true" id="b840ae0c-c5f5-4053-a960-d1a9ca865a09" name="Changes" comment="Zsdfgsdgsdgadasdasd" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -96,7 +91,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1740937033954</updated>
-      <workItem from="1740937034981" duration="6192000" />
+      <workItem from="1740937034981" duration="6704000" />
     </task>
     <task id="LOCAL-00001" summary="Zsdfgsdgsdg">
       <option name="closed" value="true" />
@@ -106,15 +101,57 @@
       <option name="project" value="LOCAL" />
       <updated>1740941824642</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Zsdfgsdgsdg">
+      <option name="closed" value="true" />
+      <created>1740943453857</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1740943453857</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Zsdfgsdgsdg">
+      <option name="closed" value="true" />
+      <created>1740943460926</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1740943460926</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Zsdfgsdgsdg">
+      <option name="closed" value="true" />
+      <created>1740943511058</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1740943511058</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Zsdfgsdgsdgadasdasd">
+      <option name="closed" value="true" />
+      <created>1740943525006</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1740943525006</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Zsdfgsdgsdgadasdasd">
+      <option name="closed" value="true" />
+      <created>1740943957325</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1740943957326</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
   <component name="VcsManagerConfiguration">
+    <MESSAGE value="Zsdfgsdgsdghgfh" />
     <MESSAGE value="Zsdfgsdgsdg" />
-    <option name="LAST_COMMIT_MESSAGE" value="Zsdfgsdgsdg" />
+    <MESSAGE value="Zsdfgsdgsdgadasdasd" />
+    <option name="LAST_COMMIT_MESSAGE" value="Zsdfgsdgsdgadasdasd" />
   </component>
   <component name="XSLT-Support.FileAssociations.UIState">
     <expand />

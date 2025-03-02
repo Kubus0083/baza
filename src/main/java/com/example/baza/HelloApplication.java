@@ -48,7 +48,7 @@ public class HelloApplication extends Application {
         VBox layout = new VBox(10, nameField, ageField, gradeField,idField, addButton, updateButton, deleteButton, studentTable);
         Scene scene = new Scene(layout, 400, 400);
 
-        primaryStage.setTitle("Student Management");
+        primaryStage.setTitle("Baza system super");
         primaryStage.setScene(scene);
         primaryStage.show();
 

@@ -12,7 +12,6 @@ public class Student {
     private final IntegerProperty age;
     private final StringProperty grade;
 
-    // Konstruktor
     public Student(int id, String name, int age, String grade) {
         this.id = new SimpleIntegerProperty(id);
         this.name = new SimpleStringProperty(name);
@@ -20,7 +19,6 @@ public class Student {
         this.grade = new SimpleStringProperty(grade);
     }
 
-    // Getter i Setter dla ID
     public int getId() {
         return id.get();
     }
@@ -33,7 +31,7 @@ public class Student {
         return id;
     }
 
-    // Getter i Setter dla Name
+
     public String getName() {
         return name.get();
     }
@@ -46,7 +44,7 @@ public class Student {
         return name;
     }
 
-    // Getter i Setter dla Age
+
     public int getAge() {
         return age.get();
     }
@@ -59,7 +57,6 @@ public class Student {
         return age;
     }
 
-    // Getter i Setter dla Grade
     public String getGrade() {
         return grade.get();
     }

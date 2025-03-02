@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-        // Pola tekstowe
+
         nameField = new TextField();
         nameField.setPromptText("Enter Name");
 
@@ -34,21 +34,17 @@ public class HelloApplication extends Application {
         idField = new TextField();
         idField.setPromptText("Enter Id");
 
-        // Przyciski
         addButton = new Button("Add");
         updateButton = new Button("Update");
         deleteButton = new Button("Delete");
 
-        // Tabela studentów
         studentTable = new TableView<>();
         studentTable.getColumns().addAll(createColumns());
 
-        // Zdarzenia przycisków
         addButton.setOnAction((e)->{baza.addStudent(nameField.getText(), Integer.parseInt(ageField.getText()),gradeField.getText());refreshTable();});
         updateButton.setOnAction(e -> {baza.updateStudent(nameField.getText(), Integer.parseInt(ageField.getText()),gradeField.getText(), Integer.parseInt(idField.getText()));refreshTable();});
         deleteButton.setOnAction(e -> {baza.deleteStudent(Integer.parseInt(idField.getText()));refreshTable();});
 
-        // Układ
         VBox layout = new VBox(10, nameField, ageField, gradeField,idField, addButton, updateButton, deleteButton, studentTable);
         Scene scene = new Scene(layout, 400, 400);
 
@@ -56,7 +52,6 @@ public class HelloApplication extends Application {
         primaryStage.setScene(scene);
         primaryStage.show();
 
-        // Inicjalizacja tabeli
 
 
         refreshTable();
@@ -69,7 +64,6 @@ public class HelloApplication extends Application {
         studentTable.setItems(students);
     }
 
-    // Tworzenie kolumn w tabeli
     private List<TableColumn<Student, ?>> createColumns() {
 
 
@@ -84,7 +78,7 @@ public class HelloApplication extends Application {
 
         TableColumn<Student, String> idCollumn = new TableColumn<>("Id");
         idCollumn.setCellValueFactory(cellData -> cellData.getValue().idProperty().asString());
-        // Dodajemy bezpośrednio kolumny do listy
+
         List<TableColumn<Student, ?>> columns = new ArrayList<>();
         columns.add(idCollumn);
         columns.add(nameColumn);

@@ -9,9 +9,8 @@ public class baza {
 
     private static final String URL = "jdbc:mysql://localhost:3306/school3tf";
     private static final String USER = "root";
-    private static final String PASSWORD = ""; // Użyj swojego hasła
+    private static final String PASSWORD = "";
 
-    // Połączenie z bazą danych
     public static Connection getConnection() throws SQLException {
         Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
         if (connection == null) {
@@ -22,7 +21,6 @@ public class baza {
         return connection;
     }
 
-    // Dodanie studenta
     public static void addStudent(String name, int  age, String grade) {
         String query = "INSERT INTO students (name, age, grade) VALUES (?, ?, ?)";
 
@@ -38,7 +36,6 @@ public class baza {
         }
     }
 
-    // Pobranie wszystkich studentów
     public static ObservableList<Student> getAllStudents() {
         ObservableList<Student> students = FXCollections.observableArrayList();
         String query = "SELECT * FROM students";
@@ -56,7 +53,6 @@ public class baza {
         return students;
     }
 
-    // Aktualizacja studenta
     public static void updateStudent(String name, int  age, String grade, int id) {
         String query = "UPDATE students SET name = ?, age = ?, grade = ? WHERE id = ?";
 
@@ -72,7 +68,6 @@ public class baza {
         }
     }
 
-    // Usunięcie studenta
     public static void deleteStudent(int id) {
         String query = "DELETE FROM students WHERE id = ?";
 

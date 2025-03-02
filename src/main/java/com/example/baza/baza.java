@@ -7,7 +7,7 @@ import java.sql.*;
 
 public class baza {
 
-    private static final String URL = "jdbc:mysql://localhost:3306/school3tf";
+    private static final String URL = "jdbc:mysql://localhost:3306/school";
     private static final String USER = "root";
     private static final String PASSWORD = "";
 

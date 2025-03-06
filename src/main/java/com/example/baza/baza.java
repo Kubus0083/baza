@@ -25,14 +25,14 @@ public class baza {
                     System.out.println( e1.getMessage());
                 }
             }
-            System.out.println("Connected to database");
+
 
         } catch (SQLException e) {
             System.out.println("Błąd połączenia: " + e.getMessage());
         }
         try (Connection connection = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD)) {
             try (Statement stmt = connection.createStatement()) {
-                // Sprawdzamy, czy tabela istnieje
+
                 ResultSet rs = stmt.executeQuery("SHOW TABLES LIKE '" + TABLE_NAME + "'");
                 if (!rs.next()) {
 
@@ -43,9 +43,7 @@ public class baza {
                             + "grade VARCHAR(3)"
                             + ")";
                     stmt.executeUpdate(createTableSQL);
-                    System.out.println("Tabela została utworzona.");
-                } else {
-                    System.out.println("Tabela już istnieje.");
+
                 }
             } catch (SQLException e) {
                 System.out.println("Błąd przy sprawdzaniu lub tworzeniu tabeli: " + e.getMessage());

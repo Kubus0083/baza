@@ -7,47 +7,74 @@ import java.sql.*;
 
 public class baza {
 
-    private static  String URL = "jdbc:mysql://localhost:3306/school";
+    private static  String URL = "jdbc:mysql://localhost:3306/";
     private static  String USER = "root";
     private static  String PASSWORD = "";
     private static  String DB_NAME = "school";
     private static  String TABLE_NAME = "students";
 
-    public static Connection getConnection() throws SQLException {
-        Connection connection = null;
+    public static void checkConnection() {
+        try (Connection connection = DriverManager.getConnection(URL, USER, PASSWORD)) {
+            try {
+                connection.createStatement().executeQuery("USE " + DB_NAME);
+            } catch (SQLException e) {
+                try (Statement stmt = connection.createStatement()) {
+                    stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS " + DB_NAME);
 
-        try {
-
-            connection = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD);
-            System.out.println("Połączenie udane.");
+                } catch (SQLException e1) {
+                    System.out.println( e1.getMessage());
+                }
+            }
+            System.out.println("Connected to database");
 
         } catch (SQLException e) {
-            // Jeśli połączenie się nie uda, sprawdzamy, czy baza danych istnieje
-            System.out.println("Połączenie nieudane. Tworzę bazę danych...");
-
-            // Tworzymy nową bazę danych
-            try (Connection tempConnection = DriverManager.getConnection(URL, USER, PASSWORD)) {
-                Statement stmt = tempConnection.createStatement();
-                stmt.executeUpdate("CREATE DATABASE IF NOT EXISTS " + DB_NAME);
-            } catch (SQLException ex) {
-                System.out.println("Błąd przy tworzeniu bazy danych: " + ex.getMessage());
-            }
-
+            System.out.println("Błąd połączenia: " + e.getMessage());
         }
-            String createTableSQL = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
-                    + "id INT(11) AUTO_INCREMENT PRIMARY KEY, "
-                    + "name VARCHAR(100), "
-                    + "age INT(11), "
-                    + "grade VARCHAR(3)"
-                    + ")";
-
+        try (Connection connection = DriverManager.getConnection(URL + DB_NAME, USER, PASSWORD)) {
             try (Statement stmt = connection.createStatement()) {
-                stmt.executeUpdate(createTableSQL);
+                // Sprawdzamy, czy tabela istnieje
+                ResultSet rs = stmt.executeQuery("SHOW TABLES LIKE '" + TABLE_NAME + "'");
+                if (!rs.next()) {
+
+                    String createTableSQL = "CREATE TABLE IF NOT EXISTS " + TABLE_NAME + " ("
+                            + "id INT(11) AUTO_INCREMENT PRIMARY KEY, "
+                            + "name VARCHAR(100), "
+                            + "age INT(11), "
+                            + "grade VARCHAR(3)"
+                            + ")";
+                    stmt.executeUpdate(createTableSQL);
+                    System.out.println("Tabela została utworzona.");
+                } else {
+                    System.out.println("Tabela już istnieje.");
+                }
             } catch (SQLException e) {
-                System.out.println("Błąd przy tworzeniu tabeli: " + e.getMessage());
+                System.out.println("Błąd przy sprawdzaniu lub tworzeniu tabeli: " + e.getMessage());
             }
+
+        } catch (SQLException e) {
+            System.out.println("Błąd połączenia: " + e.getMessage());
+        }
+
+        URL = "jdbc:mysql://localhost:3306/"+DB_NAME;
+    }
+
+
+
+
+
+
+
+
+    public static Connection getConnection() throws SQLException {
+        Connection connection = DriverManager.getConnection(URL, USER, PASSWORD);
+        if (connection == null) {
+            System.out.println("Połączenie nieudane.");
+        } else {
+            System.out.println("Połączenie udane.");
+        }
         return connection;
     }
+
     public static void addStudent(String name, int  age, String grade) {
         String query = "INSERT INTO students (name, age, grade) VALUES (?, ?, ?)";
 

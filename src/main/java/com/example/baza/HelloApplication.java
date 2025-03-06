@@ -22,7 +22,7 @@ public class HelloApplication extends Application {
 
     @Override
     public void start(Stage primaryStage) {
-
+        baza.checkConnection();
         nameField = new TextField();
         nameField.setPromptText("Enter Name");
 
@@ -57,10 +57,9 @@ public class HelloApplication extends Application {
         refreshTable();
     }
     private void refreshTable() {
-        // Pobieramy wszystkie rekordy ze źródła (np. bazy danych)
+
         ObservableList<Student> students = baza.getAllStudents();
 
-        // Ustawiamy nowe dane w tabeli
         studentTable.setItems(students);
     }
 
